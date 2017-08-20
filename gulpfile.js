@@ -160,16 +160,22 @@ gulp.task('browserSync', function() {
                             function(err, row) {
                                 db.each("SELECT * FROM users WHERE id='" + row.uid + "'",
                                     function(err2, row_user) {
-                                        response['status'] = 'success';
-                                        response['errmsg'] = null;
-                                        response['name'] = row_user.name;
-                                        response['email'] = row_user.mail;
-                                        response['resumo'] = row.resumo;
-                                        response['need'] = row.need;
-                                        response['p_name'] = row.name;
-                                        response['p_link'] = row.project_link;
-                                        res.write(JSON.stringify(response));
-                                        res.end();
+                                        db.all("SELECT * FROM user_help JOIN users ON user_help.fk_uid = users.id WHERE user_help.fk_help='" + values.proj_id + "'",
+                                            function(err3, all_users) {
+                                                console.log(err3);
+                                                response['users'] = all_users;
+                                                response['status'] = 'success';
+                                                response['errmsg'] = null;
+                                                response['name'] = row_user.name;
+                                                response['email'] = row_user.mail;
+                                                response['resumo'] = row.resumo;
+                                                response['need'] = row.need;
+                                                response['p_name'] = row.name;
+                                                response['p_link'] = row.project_link;
+                                                console.log(JSON.stringify(response));
+                                                res.write(JSON.stringify(response));
+                                                res.end();
+                                            });
                                     });
                             });
                         return null;
@@ -198,7 +204,7 @@ gulp.task('browserSync', function() {
                         var resumo = values['description'];
                         console.log(values);
                         db.each("SELECT * FROM users WHERE username='" + username + "'", function(err, row) {
-                            var result = db.run("insert into helps values (NULL, \"" + row.id + "\", \"" + resumo + "\", \"" + need + "\", \"" + category + "\", \"" + link + "\")");
+                            var result = db.run("insert into helps values (NULL, \"" + row.id + "\", \"" + resumo + "\", \"" + need + "\", \"" + p_name + "\", \"" + category + "\", \"" + link + "\")");
                             console.log(result);
                             response['status'] = 'success';
                             console.log(JSON.stringify(response));
