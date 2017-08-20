@@ -2,39 +2,42 @@
 <html lang="en">
 
     <head>
-
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="">
-
-        <title>{{name}}, projects</title>
-
-        <!-- Angular -->
+        <!-- JS libraries -->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script src="https://www.w3schools.com/lib/w3.js"></script>
 
         <!-- Bootstrap core CSS -->
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-        <!-- Custom styles for this template -->
-        <link href="css/user.css" rel="stylesheet">
+        <!-- Custom fonts for this template -->
+        <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-        <script src="https://www.w3schools.com/lib/w3.js"></script>
+        <!-- Plugin CSS -->
+        <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+        <!-- Custom CSS-->
+        <link href="css/creative.min.css" rel="stylesheet">
+        <link href="css/projectoverview.css" rel="stylesheet" type="text/css">
+
+        <title>{{name}}, projects</title>
     </head>
 
     <body ng-app="userApp">
         <div w3-include-html="navbar.html"></div>
-
+        <br>
+        <br>
         <!-- Page Content -->
         <div class="container" ng-controller="u_infoCtrl">
 
             <!-- Page Heading -->
             <h1 class="my-4">{{name}}</h1>
 
+            <h3>Projetos</h3>
+            <br>
             <div class="row">
-                <h3>Projetos</h3>
                 <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item"
-                     ng-repeat="project in projects">
+                    ng-repeat="project in projects">
                     <div class="card h-100">
                         <div class="card-body">
                             <h4 class="card-title"><a href="project.html?id={{project.id}}">{{project.name}}</a></h4>
@@ -46,27 +49,18 @@
             </div>
             <!-- /.row -->
 
+            <script>w3.includeHTML();</script>
+            <!-- Bootstrap core JavaScript -->
+            <script src="vendor/jquery/jquery.min.js"></script>
+            <script src="vendor/popper/popper.min.js"></script>
+            <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+            <!-- Angular controller -->
+            <script src="js/userCtrl.js"> </script>
 
-        <!-- Footer -->
-        <footer class="py-5 bg-dark">
-            <div class="container">
-                <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
-            </div>
-            <!-- /.container -->
-        </footer>
+            <!-- Plugin JavaScript -->
+            <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+            <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+            <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+        </body>
 
-        <script>w3.includeHTML();</script>
-        <!-- Bootstrap core JavaScript -->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/popper/popper.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-        <!-- Angular controller -->
-        <script src="js/userCtrl.js"> </script>
-
-        <!-- Plugin JavaScript -->
-        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-        <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
-        <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-    </body>
-
-</html>
+    </html>
