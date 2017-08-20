@@ -342,3 +342,7 @@ header.masthead {
 
 .btn-xl {
   padding: 15px 30px; }
+
+.form-text {
+  width: 70%;
+  margin: auto; }
