@@ -116,7 +116,11 @@ gulp.task('browserSync', function() {
             var values = {};
             if (req.method === 'POST') {
                 req.on('data', function (data) {
-                    var values = JSON.parse(data);
+                    try {
+                        var values = JSON.parse(data);
+                    } catch (e) {
+                        return;
+                    }
                     var response = {};
                     console.log('teste');
                     if (req.url === '/login') {
