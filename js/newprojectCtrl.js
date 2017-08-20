@@ -7,7 +7,7 @@ app.controller('addprojectCtrl', ['$scope', '$http',
                 p_name: $scope.p_name,
                 username: localStorage.username,
                 webpage: $scope.page,
-                description: $scope.desci,
+                description: $scope.desc,
                 category: $scope.category,
                 message: $scope.msg
             };
