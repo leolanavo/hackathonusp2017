@@ -27,127 +27,136 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
                     <h1> Descreva seu projeto: </a> </h1>
-                    <form id="contact-form" method="post" action="contact-2.php" role="form">
-                        <div class="messages"></div>
-                        <div class="controls">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-name">
-                                        <label for="form_name">Researcher Name *:</label>
-                                        <input id="form-name" type="name" name="name"
-                                                                          class="form-control" placeholder="Please enter your name *"
-                                                                                               required="required" data-error="Valid name is required.">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-name">
-                                        <label for="form_name">Project name *:</label>
-                                        <input id="form-name" type="name" name="name"
-                                                                          class="form-control" placeholder="Please enter your project name *"
-                                                                                               required="required" data-error="Valid name is required.">
-                                    </div>
-                                </div>
-                            </div><br>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="form_email">Email:</label>
-                                        <input id="form-e-mail" type="e-mail" name="e-mail"
-                                                                              class="form-control" placeholder="Please enter e-mail *"
-                                                                                                   required="required" data-error="Valid e-mail is required.">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="form_phone">Telefone:</label>
-                                        <input id="form-phone" type="phone" name="phone"
-                                                                            class="form-control" placeholder="Please enter phone *"
-                                                                                                 required="required" data-error="Valid phone is required.">
-                                    </div>
-                                </div>
-                            </div><br>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="form_phone"> Página oficial do projeto: </label>
-                                        <input id="form-site" type="site" name="site" class="form-control"
-                                                                                      placeholder="Please enter official site *" required="required"
-                                                                                                                                 data-error="Valid site is required.">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <br>
+                <form id="contact-form" method="post" action="contact-2.php" role="form">
+                    <div class="messages"></div>
+                    <div class="controls">
                         <div class="row">
-                            <div class="col-sm-3">
-                                <input type="checkbox" name="estatisca"
-                                                       value="1"> Estatística
+                            <div class="col-md-6">
+                                <div class="form-name">
+                                    <label for="form_name">Researcher Name *:</label>
+                                    <input id="form-name" type="name" name="name"
+                                    class="form-control" placeholder="Please enter your name *"
+                                    required="required" data-error="Valid name is required.">
+                                </div>
                             </div>
-                            <div class="col-sm-3">
-                                <input type="checkbox" name="letras"
-                                                       value="2"> Letras
+                            <div class="col-md-6">
+                                <div class="form-name">
+                                    <label for="form_name">Project name *:</label>
+                                    <input id="form-name" type="name" name="name"
+                                    class="form-control" placeholder="Please enter your project name *"
+                                    required="required" data-error="Valid name is required.">
+                                </div>
                             </div>
-                            <div class="col-sm-3">
-                                <input type="checkbox" name="computacao" value="3"> Computação
-                            </div>
-                            <div class="col-sm-3">
-                                <input type="checkbox" name="saude"
-                                                       value="4"> Saúde
-                            </div>
-                            <div class="col-sm-3">
-                                <input type="checkbox" name="fisica"
-                                                       value="5"> Física
-                            </div>
-                            <div class="col-sm-3">
-                                <input type="checkbox" name="economia"
-                                                       value="6"> Economia
-                            </div>
-                            <div class="col-sm-3">
-                                <input type="checkbox" name="astronomia"
-                                                       value="7"> Astronomia
-                            </div>
-                            <div class="col-sm-3">
-                                <input type="checkbox" name="publicidade"
-                                                       value="8"> Publicidade
-                            </div>
-                        </div>
-                        <br>
+                        </div><br>
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="form_phone">Resumo:</label>
-                                    <textarea id="form_resume" name="resume" class="form-control"
-                                                                             placeholder="Resume *" rows="4" required="required" data-error="Resume this."></textarea>
-                                    <div class="help-block with-errors"></div>
-                                    <br>
-                                    <label for="form_message">Preciso de você: </label>
-                                    <textarea id="form_requeriment" name="form_requeriment"
-                                                                    class="form-control" placeholder="Requerimento *" rows="4"
-                                                                                                                      required="required" data-error="Requerimento."></textarea>
+                                    <label for="form_email">Email:</label>
+                                    <input id="form-e-mail" type="e-mail" name="e-mail"
+                                    class="form-control" placeholder="Please enter e-mail *"
+                                    required="required" data-error="Valid e-mail is required.">
                                 </div>
                             </div>
-
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_phone">Telefone:</label>
+                                    <input id="form-phone" type="phone" name="phone"
+                                    class="form-control" placeholder="Please enter phone *"
+                                    required="required" data-error="Valid phone is required.">
+                                </div>
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_phone"> Página oficial do projeto: </label>
+                                    <input id="form-site" type="site" name="site" class="form-control"
+                                    placeholder="Please enter official site *" required="required"
+                                    data-error="Valid site is required.">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-3 radio">
+                            <label><input type="radio"
+                                name="estatistica"> Estatística
+                            </label>
+                        </div>
+                        <div class="col-sm-3 radio">
+                            <label><input type="radio"
+                                name="letras"> Letras
+                            </label>
+                        </div>
+                        <div class="col-sm-3 radio">
+                            <label><input type="radio"
+                                name="computacao"> Computação
+                            </label>
+                        </div>
+                        <div class="col-sm-3 radio">
+                            <label><input type="radio"
+                                name="saude"> Saúde
+                            </label>
+                        </div>
+                        <div class="col-sm-3 radio">
+                            <label><input type="radio"
+                                name="fisica"> Física
+                            </label>
+                        </div>
+                        <div class="col-sm-3 radio">
+                            <label><input type="radio"
+                                name="economia"> Economia
+                            </label>
+                        </div>
+                        <div class="col-sm-3 radio">
+                            <label><input type="radio"
+                                name="astronomia"> Astronomia
+                            </label>
+                        </div>
+                        <div class="col-sm-3 radio">
+                            <label><input type="radio"
+                                name="publicidade"> Publicidade
+                            </label>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="form_phone">Resumo:</label>
+                                <textarea id="form_resume" name="resume" class="form-control"
+                                    placeholder="Resume *" rows="4" required="required" data-error="Resume this."></textarea>
+                                <div class="help-block with-errors"></div>
+                                <br>
+                                <label for="form_message">Preciso de você: </label>
+                                <textarea id="form_requeriment" name="form_requeriment"
+                                    class="form-control" placeholder="Requerimento *" rows="4"
+                                    required="required" data-error="Requerimento."></textarea>
+                            </div>
                         </div>
 
-                    </form>
+                    </div>
 
-                </div><!-- /.8 -->
+                </form>
 
-            </div> <!-- /.row-->
+            </div><!-- /.8 -->
 
-        </div> <!-- /.container-->
+        </div> <!-- /.row-->
 
-        <!-- Bootstrap core JavaScript -->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/popper/popper.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    </div> <!-- /.container-->
 
-        <!-- Plugin JavaScript -->
-        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-        <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
-        <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper/popper.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
-        <script> w3.includeHTML(); </script>
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
-    </body>
+    <script> w3.includeHTML(); </script>
+
+</body>
 </html>
