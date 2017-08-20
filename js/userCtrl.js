@@ -3,7 +3,7 @@ var app = angular.module('userApp', []);
 app.controller('u_infoCtrl', ['$scope', '$http',
     function($scope, $http) {
         var js = {
-            user: 'seijihariki'
+            user: localStorage.username
         };
 
         $http({
