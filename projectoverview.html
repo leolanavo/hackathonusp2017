@@ -1,6 +1,8 @@
 <head>
+    <meta charset="utf-8">
     <!-- Angular -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src"sidemenu.js"></script>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -48,8 +50,25 @@
             </ul>
         </div>
     </nav>
+
     <br>
     <br>
+    <div class="container-fluid" style="margin-top:10px;
+        background-color:#191919; border-radius:10px;">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="row">
+                    <div style="margin:10px;" ng-repeat="i in [ 
+                        'Estatística', 'Letras', 'Computação', 'Saúde','Física',
+                        'Economia', 'Astronomia', 'Publicidade']">
+                        <div class="btn btn-primary btn-sm">{{i}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12 mt-12">
@@ -57,8 +76,9 @@
                     <div class="col-lg-3" ng-repeat="i in [1, 2, 3, 4, 5, 6, 7, 8]">
                         <div class="card card-margin">
                             <h4 class="card-title">Projeto {{i}}</h4>
+                            <p class="card-text">Necessidade</p>
                             <p class="card-text">Descrição de projeto</p>
-                            <a href="#" class="btn btn-primary btn-sm float-right button-per">Inscreva-se</a>
+                            <a href="#" class="btn btn-primary btn-sm float-right">Inscreva-se</a>
                         </div>
                     </div>
                 </div>
