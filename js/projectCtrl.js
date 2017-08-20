@@ -1,7 +1,5 @@
 var app = angular.module('projectApp', []);
 
-
-
 app.controller('infoCtrl', ['$scope', '$http',
     function($scope, $http) {
         var js = {
@@ -19,7 +17,7 @@ app.controller('infoCtrl', ['$scope', '$http',
             if (data.status === 'success') {
                 $scope.name = data.name;
                 $scope.email = data.email;
-                $scope.users_of = data.users_of;
+                $scope.users = data.users;
                 $scope.p_link = data.p_link;
                 $scope.resumo = data.resumo;
                 $scope.p_name = data.p_name;
