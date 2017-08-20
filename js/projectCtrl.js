@@ -5,7 +5,7 @@ var app = angular.module('projectApp', []);
 app.controller('infoCtrl', ['$scope', '$http',
     function($scope, $http) {
         var js = {
-            proj_id: 1
+            proj_id: 1 
         };
 
         $http({

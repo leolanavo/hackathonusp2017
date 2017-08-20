@@ -1,6 +1,6 @@
 var app = angular.module('indexApp', []);
 
-if (typeof(localStorage.username) != 'undefined' && localStorage.username != null)
+if (localStorage.username != "null")
     window.location.replace('user.html');
 
 app.controller('registerCtrl', ['$scope', '$http', 
