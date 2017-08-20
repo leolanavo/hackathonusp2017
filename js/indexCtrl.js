@@ -1,5 +1,8 @@
 var app = angular.module('indexApp', []);
 
+if (typeof(localStorage.username) != 'undefined' && localStorage.username != null)
+    window.location.replace('user.html');
+
 app.controller('registerCtrl', ['$scope', '$http', 
     function($scope, $http) {
         $scope.register = function() {
@@ -45,6 +48,7 @@ app.controller('loginCtrl', ['$scope', '$http',
                 var data = response.data;
                 if (data.status === 'success'){
                     localStorage.username = $scope.username;
+                    window.location.replace('user.html');
                 } else
                     alert('Failed! Reason: ' + data.errmsg);
             }, function error(response) {

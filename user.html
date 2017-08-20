@@ -44,8 +44,9 @@
                         <a class="nav-link" href="#services">Perfil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#login">
-                            <div class="fa fa-sign-in"></div> Login
+                        <a class="nav-link" href="#"
+                            ng-click="localStorage.username = null; window.location.replace('/');">
+                            <div class="fa fa-sign-out"></div> Logout
                         </a>
                     </li>
                 </ul>
