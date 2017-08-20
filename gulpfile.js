@@ -188,6 +188,7 @@ gulp.task('browserSync', function() {
                                         response['status'] = 'success';
                                         response['errmsg'] = null;
                                         response['name'] = row.name;
+                                        response['points'] = row.points;
                                         response['projects'] = all_row;
                                         console.log(JSON.stringify(response));
                                         res.write(JSON.stringify(response));
