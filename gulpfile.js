@@ -12,7 +12,6 @@ var pkg = require('./package.json');
 
 var db = new sqlite3.Database('database.db');
 
-var c_user = 0;
 var c_help = 0;
 // Set the banner content
 var banner = ['/*!\n',
