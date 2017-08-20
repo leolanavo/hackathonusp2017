@@ -1,48 +1,43 @@
 <html>
     <head>
-        <title>Pode me ajudar? : ____ </title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-        <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-        <link href='css/project.css' rel='stylesheet' type='text/css'>
-        <!-- Angular -->
+        <meta charset="utf-8">
+        <!-- JS libraries -->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script src="https://www.w3schools.com/lib/w3.js"></script>
+
         <!-- Bootstrap core CSS -->
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom fonts for this template -->
         <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,
-        400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,
-        300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
         <!-- Plugin CSS -->
         <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
-        <!-- Custom styles for this template -->
+        <!-- Custom CSS -->
         <link href="css/creative.min.css" rel="stylesheet">
-        <script src="https://www.w3schools.com/lib/w3.js"></script>
+        <link href="css/project.css" rel="stylesheet" type="text/css">
+
+        <title>Projects Overview</title>
     </head>
+
     <body ng-app="projectApp">
 
         <div w3-include-html="navbar.html"></div>
         <br>
         <br>
         <br>
-        <br>
-        <br>
-        <div class="container-fluid" ng-controller="infoCtrl">
+        <div class="container-fluid" ng-controller="infoCtrl" style="text-align:
+            center;">
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <h1> <a
-                     href="https://andersonandrei.github.io/VehicularNetworksIC">{{p_name}}</a></h1>
+                <div class="col-lg-12 col-lg-offset-2">
+                    <h1> <a href="https://andersonandrei.github.io/VehicularNetworksIC">{{p_name}}</a></h1>
                     <form id="contact-form" method="post" action="contact-2.php" role="form">
                         <div class="messages"></div>
                         <div class="controls">
                             <hr>
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="form_name">Name :</label>
                                         <p> <a href="user.html"> {{name}} </a></p>
@@ -50,7 +45,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="form_email">Email:</label>
                                         <p> {{email}} </p>
@@ -58,10 +53,10 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-group">
-                                        <p><a
-                                         href="https://andersonandrei.github.io/VehicularNetworksIC"/> Página oficial do projeto </a></p>
+                                        <p><a href="https://andersonandrei.github.io/VehicularNetworksIC"/>
+                                                Página oficial do projeto </a></p>
                                     </div>
                                 </div>
                             </div>
@@ -80,9 +75,11 @@
                     </form>
                 </div><!-- /.8 -->
             </div> <!-- /.row-->
+            <div class="container-fluid" style="background-color:#505050;
+                height: 3px;">-</div>
             <div class="row">
                 <ul class="list-group col-md-8 col-sm-12 col-md-offset-2" >
-                    <h3>Interessados em ajudar</h3>
+                    <h3 style="text-align:left; margin: 10px">Interessados em ajudar</h3>
                     <li class="list-group-item" ng-repeat="i in users"><!-- edit for backend -->
                         <h4> <a href="#">{{i}}</a></h4>
                         <a href=# class="btn btn-success"><span class="glyphicon glyphicon-ok"></span></a>
