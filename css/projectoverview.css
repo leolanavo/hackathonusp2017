@@ -1,8 +1,9 @@
 .card-margin {
-    border-color: #000000;
+    border-color: #c8c8c8;
     padding: 10px;
     margin-bottom: 10px;
     margin-top: 10px;
+    background-color: #e8e8e8;    
 }
 
 .button-per {
@@ -10,6 +11,11 @@
     border-color: #F05F40;
 }
 
-.dick {
-    background: #000000;
+.menu {
+    border-radius: 10px;
+    background-color: #000000;
+}
+
+.btn-pre {
+    margin: 10px;
 }
