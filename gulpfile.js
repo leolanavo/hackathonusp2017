@@ -112,41 +112,52 @@ gulp.task('browserSync', function() {
         middleware: function(req,res,next) {
             var values = {};
             if (req.method === 'POST') {
-                var body = '';
                 req.on('data', function (data) {
-                    body += data;
-                });
-                req.on('end', function () {
-                    body.replace('+', ' ');
-                    body = body.split('&');
-                    for (var id in body) {
-                        var vec = body[id].split('=');
-                        console.log(vec[0] + ': ' + vec[1]);
-                        values[vec[0]] = vec[1];
-                    }
+                    var values = JSON.parse(data);
+                    var response = {};
+                    console.log('teste');
                     if (req.url === '/login') {
-                        db.each("SELECT * FROM users", function(err, row) {
-                            console.log(row.id + ": " + row.name);
+                        response['status'] = 'fail';
+                        response['errmsg'] = 'Wrong credentials!';
+                        db.each("SELECT * FROM users WHERE username='" + values['username'] + "' OR mail='" + values['username'] + "'", function(err, row) {
+                            if (row.passhash == crypto.createHash('md5').update(values['password']).digest('hex')) {
+                                response['status'] = 'success';
+                                response['errmsg'] = null;
+                            } else {
+                                response['status'] = 'fail';
+                                response['errmsg'] = 'Wrong credentials!';
+                            }
+                            res.write(JSON.stringify(response));
+                            res.end();
                         });
-
-                        res.end();
                         return null;
                     } else if (req.url === '/register'){
-                        var name = values['name'];
+                        var name = values['fullname'];
                         var username = values['username'];
                         var email = values['email'];
                         var password = values['password'];
                         var password_c = values['password_c'];
                         var passhash = crypto.createHash('md5').update(values['password']).digest('hex');
-                        var result = db.run("insert into users values (NULL, \"" + name + "\", \"" + username + "\", \"" + email + "\", \"" + passhash + "\")");
-                        console.log(result);
-                        res.write('{status: \'success\';}');
-                        res.end();
+                        console.log(values);
+                        db.all("SELECT * FROM users WHERE username='" + username + "' OR mail='" + email + "'", function(err, rows) {
+                            if (rows == undefined || rows.length == 0) {
+                                var result = db.run("insert into users values (NULL, \"" + name + "\", \"" + username + "\", \"" + email + "\", \"" + passhash + "\")");
+                                console.log(result);
+                                response['status'] = 'success';
+                                console.log(JSON.stringify(response));
+                            } else {
+                                response['status'] = 'fail';
+                                response['errmsg'] = 'Username or email already exists!';
+                            }
+                            res.write(JSON.stringify(response));
+                            res.end();
+                        });
                         return null;
                     }
                 });
+            } else {
+                return next();
             }
-            return next();
         }
     })
 })
