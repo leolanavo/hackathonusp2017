@@ -167,6 +167,7 @@ gulp.task('browserSync', function() {
                                         response['resumo'] = row.resumo;
                                         response['need'] = row.need;
                                         response['p_name'] = row.name;
+                                        response['p_link'] = row.project_link;
                                         res.write(JSON.stringify(response));
                                         res.end();
                                     });

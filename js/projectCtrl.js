@@ -1,9 +1,11 @@
 var app = angular.module('projectApp', []);
 
+
+
 app.controller('infoCtrl', ['$scope', '$http',
     function($scope, $http) {
         var js = {
-            proj_id: '1'
+            proj_id: 1
         };
 
         $http({
@@ -18,6 +20,7 @@ app.controller('infoCtrl', ['$scope', '$http',
                 $scope.name = data.name;
                 $scope.email = data.email;
                 $scope.users_of = data.users_of;
+                $scope.p_link = data.p_link;
                 $scope.resumo = data.resumo;
                 $scope.p_name = data.p_name;
                 $scope.need = data.need;
