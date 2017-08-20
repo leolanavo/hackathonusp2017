@@ -21,20 +21,24 @@
         <title>Projects Overview</title>
     </head>
 
-    <body ng-app="" style="padding: 10px;">
+    <body ng-app="projectoverviewApp" ng-controller="listCtrl" style="padding: 10px;">
 
         <div w3-include-html="navbar.html"></div>
         <br>
         <br>
         <div class="container-fluid" style="margin-top:10px;
-            background-color:#191919; border-radius:10px;">
+        background-color:#191919; border-radius:10px;">
             <div class="row">
                 <div class="col-sm-12">
                     <div class="row">
-                        <div style="margin:10px;" ng-repeat="i in [
-                            'Estatística', 'Letras', 'Computação', 'Saúde','Física',
-                            'Economia', 'Astronomia', 'Publicidade']">
-                            <div class="btn btn-primary btn-sm">{{i}}</div>
+                        <div style="margin:10px;" ng-repeat="i in
+                        [{a: 'Estatística', b: 'estatistica'}, {a: 'Letras', b: 'letras'}, {a:
+                        'Computação', b: 'computacao'},
+                        {a: 'Saúde', b: 'saude'},{a: 'Física', b: 'fisica'}, {a: 'Economia', b: 'economia'}, {a:
+                        'Astronomia', b: 'astronomia'},
+                        {a: 'Publicidade', b: 'publicidade'}]">
+                            <div class="btn btn-primary btn-sm"
+                                 ng-click="ask(i.b)">{{i.a}}</div>
                         </div>
                     </div>
                 </div>
@@ -46,18 +50,18 @@
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-12 mt-12">
                     <div class="row">
-                        <div class="col-lg-3" ng-repeat="i in [1, 2, 3, 4, 5, 6, 7, 8]">
+                        <div class="col-lg-3" ng-repeat="i in projects">
                             <div class="card card-margin">
-                                <h4 class="card-title">Projeto {{i}}</h4>
-                                <p class="card-text">Necessidade</p>
-                                <p class="card-text">Descrição de projeto</p>
+                                <h4 class="card-title">{{i.name}}</h4>
+                                <p class="card-text">{{i.need}}</p>
+                                <p class="card-text">{{i.resumo}}</p>
                                 <a href="#" class="btn btn-primary btn-sm float-right">Inscreva-se</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-        <script>w3.includeHTML();</script>
+                <script>w3.includeHTML();</script>
                 <!-- Bootstrap core JavaScript -->
                 <script src="vendor/jquery/jquery.min.js"></script>
                 <script src="vendor/popper/popper.min.js"></script>
@@ -68,5 +72,7 @@
                 <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
                 <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
-            </body>
-        </html>
+                <!-- Angular controller -->
+                <script src="js/projectoverviewCtrl.js"> </script>
+    </body>
+</html>

@@ -213,6 +213,18 @@ gulp.task('browserSync', function() {
                         });
                         return null;
 
+                    } else if (req.url === '/listp') {
+                        var category = values['category'];
+                        console.log(category);
+                        db.all("SELECT * FROM helps WHERE category='" + category + "'",
+                            function(err, rows) {
+                                response['status'] = 'success';
+                                response['projects'] = rows;
+                                console.log(JSON.stringify(response));
+                                res.write(JSON.stringify(response));
+                                res.end();
+                            });
+                        return null;
                     }
                 });
             } else {
