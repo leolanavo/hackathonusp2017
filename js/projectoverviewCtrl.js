@@ -23,5 +23,25 @@ app.controller('listCtrl', ['$scope', '$http',
                 alert('Error!');
             });
         };
+        $scope.subscribe = function(id_h, username) {
+            var js = {
+                help : id_h, usr : username
+            };
+            $http({
+                url: '/subscribe',
+                method: 'POST',
+                data: JSON.stringify(js),
+                headers: {'Content-Type': 'application/json'}
+            }).then(function success(response) {
+                console.log(response.data);
+                var data = response.data;
+                if (data.status === 'success')
+                    alert("Inscrito com sucesso");
+                else
+                    alert('Failed! Reason: ' + data.errmsg);
+            }, function error(response) {
+                alert('Error!');
+            });
+        };
         $scope.ask('estatistica');
     }]);
