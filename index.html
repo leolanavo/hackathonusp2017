@@ -8,7 +8,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>ResearchGO</title>
+        <title>WeResearch</title>
 
         <!-- Angular -->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
@@ -35,7 +35,7 @@
 
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-            <a class="navbar-brand" href="#page-top">ResearchGO</a>
+            <a class="navbar-brand" href="#page-top">WeResearch</a>
             <button class="navbar-toggler navbar-toggler-right" type="button"
                     data-toggle="collapse" data-target="#navbarResponsive"
                     aria-controls="navbarResponsive" aria-expanded="false"
@@ -45,16 +45,13 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">Tendências</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="#about">Descrição</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#services">Vantagens</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Inscreva-se</a>
+                        <a class="nav-link" href="#areas">Áreas</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#login">
@@ -69,7 +66,7 @@
         <header class="masthead">
             <div class="header-content">
                 <div class="header-content-inner">
-                    <h1 id="homeHeading">ReasearchGO</h1>
+                    <h1 id="homeHeading">WeResearch</h1>
                     <hr>
                     <p>Um serviço que ajuda sua pesquisa!</p>
                     <a class="btn btn-primary btn-xl" href="#about">Ajude-se</a>
@@ -77,33 +74,11 @@
             </div>
         </header>
 
-        <section class="p-0" id="portfolio">
-            <div class="container-fluid">
-                <div class="row no-gutter popup-gallery">
-                    <div class="col-lg-4 col-sm-6" ng-repeat="i in projects">
-                        <a class="portfolio-box" href="img/portfolio/fullsize/{{i}}">
-                            <img class="img-fluid" src="img/portfolio/thumbnails/{{i}}" alt="">
-                            <div class="portfolio-box-caption">
-                                <div class="portfolio-box-caption-content">
-                                    <div class="project-category text-faded">
-                                        Category
-                                    </div>
-                                    <div class="project-name">
-                                        {{i}}
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section class="bg-primary" id="about">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 mx-auto text-center">
-                        <h2 class="section-heading text-white">Ajude a si próprio</h2>
+                        <h2 class="section-heading text-white">Ajude a si mesmo</h2>
                         <hr class="light">
                         <p class="text-faded">Dentro do nosso serviço você pode
                             localizar pessoas interessadas <br> em ajudar-lhe em sua
@@ -159,6 +134,69 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="bg-primary" id="areas">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading text-white">Áreas</h2>
+                        <hr class="primary light">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="service-box text-faded">
+                            <i class="fa fa-4x fa-bar-chart text-white sr-icons"></i>
+                            <h3 class="text-white">Estatística</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="service-box text-faded">
+                            <i class="fa fa-4x fa-edit text-white sr-icons"></i>
+                            <h3 class="text-white">Letras</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="service-box text-faded">
+                            <i class="fa fa-4x fa-laptop text-white sr-icons"></i>
+                            <h3 class="text-white">Computação</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="service-box text-faded">
+                            <i class="fa fa-4x fa-medkit text-white sr-icons"></i>
+                            <h3 class="text-white">Medicina</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="service-box text-faded">
+                            <i class="fa fa-4x fa-thermometer-2 text-white sr-icons"></i>
+                            <h3 class="text-white">Fisíca</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="service-box text-faded">
+                            <i class="fa fa-4x fa-bank text-white sr-icons"></i>
+                            <h3 class="text-white">Economia</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="service-box text-faded">
+                            <i class="fa fa-4x fa-star text-white sr-icons"></i>
+                            <h3 class="text-white">Astronomia</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="service-box text-faded">
+                            <i class="fa fa-4x fa-comments text-white sr-icons"></i>
+                            <h3 class="text-white">Publicidade</h3>
+                        </div>
+                    </div>
+                    </div>
             </div>
         </section>
  
