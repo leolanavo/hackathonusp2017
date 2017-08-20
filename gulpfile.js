@@ -232,7 +232,11 @@ gulp.task('browserSync', function() {
                         var usr = values['usr'];
                         db.each("SELECT id from users WHERE users.username ='" + usr + "'",
                             function(err, rows) {
+                                try {
                                 db.run("insert into user_help values('" + rows.id + "','" + id_h + "')");
+                                } catch (e) {
+
+                                }
                                 response['status'] = 'success';
                                 console.log(JSON.stringify(response));
                                 res.write(JSON.stringify(response));

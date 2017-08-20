@@ -23,9 +23,12 @@ app.controller('listCtrl', ['$scope', '$http',
                 alert('Error!');
             });
         };
-        $scope.subscribe = function(id_h, username) {
+        $scope.subscribe = function(id_h) {
+            var username = localStorage.username;
+            console.log(username);
             var js = {
-                help : id_h, usr : username
+                help : id_h,
+                usr : username
             };
             $http({
                 url: '/subscribe',
@@ -33,7 +36,6 @@ app.controller('listCtrl', ['$scope', '$http',
                 data: JSON.stringify(js),
                 headers: {'Content-Type': 'application/json'}
             }).then(function success(response) {
-                console.log(response.data);
                 var data = response.data;
                 if (data.status === 'success')
                     alert("Inscrito com sucesso");
