@@ -7,6 +7,7 @@ var rename = require("gulp-rename");
 var uglify = require('gulp-uglify');
 var sqlite3 = require('sqlite3');
 var crypto = require('crypto');
+var url = require('url');
 var pkg = require('./package.json');
 
 var db = new sqlite3.Database('database.db');
@@ -131,7 +132,7 @@ gulp.task('browserSync', function() {
                             res.end();
                         });
                         return null;
-                    } else if (req.url === '/register'){
+                    } else if (req.url === '/register') {
                         var name = values['fullname'];
                         var username = values['username'];
                         var email = values['email'];
@@ -152,6 +153,40 @@ gulp.task('browserSync', function() {
                             res.write(JSON.stringify(response));
                             res.end();
                         });
+                        return null;
+                    } else if (req.url === '/info') {
+                        console.log(values);
+                        db.each("SELECT * FROM help WHERE id='" + values['proj_id'] + "'",
+                            function(err, row) {
+                                db.each("SELECT * FROM users WHERE id='" + row.uid + "'",
+                                    function(err2, row_user) {
+                                        response['status'] = 'success';
+                                        response['errmsg'] = null;
+                                        response['name'] = row_user.name;
+                                        response['email'] = row_user.mail;
+                                        response['resumo'] = row.resumo;
+                                        response['need'] = row.need;
+                                        response['p_name'] = row.name;
+                                        res.write(JSON.stringify(response));
+                                        res.end();
+                                    });
+                            });
+                        return null;
+                    } else if (req.url === '/u_info') {
+                        console.log(values);
+                        db.each("SELECT * FROM users WHERE username='" + values['user'] + "'",
+                            function(err, row) {
+                                db.all("SELECT id,name,need FROM help WHERE uid='" + row.id + "'",
+                                    function(err2, all_row) {
+                                        response['status'] = 'success';
+                                        response['errmsg'] = null;
+                                        response['name'] = row.name;
+                                        response['projects'] = all_row;
+                                        console.log(JSON.stringify(response));
+                                        res.write(JSON.stringify(response));
+                                        res.end();
+                                    });
+                            });
                         return null;
                     }
                 });
