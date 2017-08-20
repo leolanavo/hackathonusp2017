@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="userApp" ng-controller="u_infoCtrl">
 
     <head>
         <meta charset="utf-8">
@@ -23,12 +23,12 @@
         <title>{{name}}, projects</title>
     </head>
 
-    <body ng-app="userApp">
+    <body>
         <div w3-include-html="navbar.html"></div>
         <br>
         <br>
         <!-- Page Content -->
-        <div class="container" ng-controller="u_infoCtrl">
+        <div class="container">
 
             <!-- Page Heading -->
             <h1 class="my-4">{{name}}</h1>

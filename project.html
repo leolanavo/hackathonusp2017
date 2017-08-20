@@ -22,7 +22,6 @@
     </head>
 
     <body ng-app="projectApp">
-
         <div w3-include-html="navbar.html"></div>
         <br>
         <br>
@@ -81,7 +80,7 @@
                 <ul class="list-group col-md-8 col-sm-12 col-md-offset-2" >
                     <h3 style="text-align:left; margin: 10px">Interessados em ajudar</h3>
                     <li class="list-group-item" ng-repeat="i in users"><!-- edit for backend -->
-                        <h4> <a href="#">{{i.name}}</a></h4>
+                        <h4> <a href="/user.html?user={{i.username}}">{{i.name}}</a></h4>
                         <a href=# class="btn btn-success"><span class="glyphicon glyphicon-ok"></span></a>
                         <a href=# class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></a>
                     </li>

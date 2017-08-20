@@ -3,7 +3,7 @@ var app = angular.module('userApp', []);
 app.controller('u_infoCtrl', ['$scope', '$http',
     function($scope, $http) {
         var js = {
-            user: 'seijihariki'
+            user: localStorage.username
         };
 
         $http({
@@ -16,6 +16,7 @@ app.controller('u_infoCtrl', ['$scope', '$http',
             var data = response.data;
             if (data.status === 'success') {
                 $scope.name = data.name;
+                $scope.score = data.points;
                 $scope.projects = data.projects;
             } else
                 alert('Failed! Reason: ' + data.errmsg);

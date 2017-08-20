@@ -11,6 +11,8 @@ var url = require('url');
 var pkg = require('./package.json');
 
 var db = new sqlite3.Database('database.db');
+
+var c_help = 0;
 // Set the banner content
 var banner = ['/*!\n',
     ' * Start Bootstrap - <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n',
@@ -156,11 +158,11 @@ gulp.task('browserSync', function() {
                         return null;
                     } else if (req.url === '/info') {
                         console.log(values);
-                        db.each("SELECT * FROM helps WHERE id='" + values['proj_id'] + "'",
+                        db.each("SELECT * FROM helps WHERE id='" + c_help + "'",
                             function(err, row) {
                                 db.each("SELECT * FROM users WHERE id='" + row.uid + "'",
                                     function(err2, row_user) {
-                                        db.all("SELECT * FROM user_help JOIN users ON user_help.fk_uid = users.id WHERE user_help.fk_help='" + values.proj_id + "'",
+                                        db.all("SELECT * FROM user_help JOIN users ON user_help.fk_uid = users.id WHERE user_help.fk_help='" + c_help + "'",
                                             function(err3, all_users) {
                                                 console.log(err3);
                                                 response['users'] = all_users;
@@ -188,6 +190,7 @@ gulp.task('browserSync', function() {
                                         response['status'] = 'success';
                                         response['errmsg'] = null;
                                         response['name'] = row.name;
+                                        response['points'] = row.points;
                                         response['projects'] = all_row;
                                         console.log(JSON.stringify(response));
                                         res.write(JSON.stringify(response));
@@ -228,6 +231,10 @@ gulp.task('browserSync', function() {
                     }
                 });
             } else {
+                var url_parts = url.parse(req.url, true);
+                var query = url_parts.query;
+                if (query.id)
+                    c_help = query.id;
                 return next();
             }
         }
