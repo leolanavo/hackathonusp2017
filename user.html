@@ -22,6 +22,35 @@
     </head>
 
     <body ng-app="userApp">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav"
+                                                                    style="background:#000000;">
+            <a class="navbar-brand" href="index.html">WeRESEARCH</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button"
+                                                                data-toggle="collapse" data-target="#navbarResponsive"
+                                                                                       aria-controls="navbarResponsive" aria-expanded="false"
+                                                                                                                        aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="projectoverview.html">Solicitações</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#areas">Nova Solicitação</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#login">
+                            <div class="fa fa-sign-in"></div> Login
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
         <!-- Page Content -->
         <div class="container" ng-controller="u_infoCtrl">
@@ -65,9 +94,6 @@
                 </li>
             </ul>
 
-        </div>
-        <!-- /.container -->
-
         <!-- Footer -->
         <footer class="py-5 bg-dark">
             <div class="container">
@@ -80,9 +106,13 @@
         <script src="vendor/jquery/jquery.min.js"></script>
         <script src="vendor/popper/popper.min.js"></script>
         <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
         <!-- Angular controller -->
         <script src="js/userCtrl.js"> </script>
+
+        <!-- Plugin JavaScript -->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+        <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+        <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
     </body>
 
 </html>
