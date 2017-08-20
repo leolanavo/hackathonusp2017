@@ -56,7 +56,9 @@
                                     href="project.html?id={{i.id}}">{{i.name}}</a></h4>
                                 <p class="card-text">{{i.need}}</p>
                                 <p class="card-text">{{i.resumo}}</p>
-                                <a href="#" class="btn btn-primary btn-sm float-right">Inscreva-se</a>
+                                <a href="#" class="btn btn-primary btn-sm
+                                    float-right" ng-click="subscribe(i.id,
+                                    localStorage.username)">Inscreva-se</a>
                             </div>
                         </div>
                     </div>
