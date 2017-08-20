@@ -8,13 +8,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Nome do pesquisador, projects</title>
-
-        <!-- Bootstrap core CSS -->
-        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Custom styles for this template -->
-        <link href="css/user.css" rel="stylesheet">
+        <title>{{name}}, projects</title>
 
         <!-- Angular -->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
@@ -22,16 +16,12 @@
         <!-- Bootstrap core CSS -->
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-        <!-- Custom fonts for this template -->
-        <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="css/projectoverview.css" rel="stylesheet" type="text/css">
-        <!-- Plugin CSS -->
-        <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
-        <link href="css/creative.min.css" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="css/user.css" rel="stylesheet">
+
     </head>
 
-    <body ng-app="">
-
+    <body ng-app="userApp">
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav"
                                                                     style="background:#000000;">
@@ -61,35 +51,48 @@
                 </ul>
             </div>
         </nav>
-        <br>
-        <br>
 
         <!-- Page Content -->
-        <div class="container">
-            <div class="row">
-                <!-- Page Heading -->
-                <h1>{{name}} </h1>
-                <p></P>
-            </div>
-            <div class="row">
-                <h3>Minhas solicitações</h3>
-                <li class="list-group-item" ng-repeat="i in [1,2,3,4]"><!-- edit for backend -->
-                    <h4> <a href="#">{{i}}</a></h4>
-                    <a href=# class="btn btn-success"><span class="glyphicon glyphicon-ok"></span></a>
-                    <a href=# class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></a>
-                </li>
-            </div>
-            <div class="row">
-                <h3>Minhas participações</h3>
-                <li class="list-group-item" ng-repeat="i in [1,2,3,4]"><!-- edit for backend -->
-                    <h4> <a href="#">{{i}}</a></h4>
-                    <a href=# class="btn btn-success"><span class="glyphicon glyphicon-ok"></span></a>
-                    <a href=# class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></a>
-                </li>
-            </div>
+        <div class="container" ng-controller="u_infoCtrl">
 
-        </div>
-        <!-- /.container -->
+            <!-- Page Heading -->
+            <h1 class="my-4">{{name}} <small>, projects</small></h1>
+
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item"
+                     ng-repeat="project in projects">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4 class="card-title"><a href="project.html?id={{project.id}}">{{project.name}}</a></h4>
+                            <p class="card-text">{{project.need}}</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.row -->
+
+            <!-- Pagination -->
+            <ul class="pagination justify-content-center">
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#">1</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">2</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+            </ul>
 
         <!-- Footer -->
         <footer class="py-5 bg-dark">
@@ -103,12 +106,13 @@
         <script src="vendor/jquery/jquery.min.js"></script>
         <script src="vendor/popper/popper.min.js"></script>
         <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <!-- Angular controller -->
+        <script src="js/userCtrl.js"> </script>
 
         <!-- Plugin JavaScript -->
         <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
         <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
         <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
     </body>
 
 </html>
