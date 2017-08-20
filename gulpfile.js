@@ -218,24 +218,22 @@ gulp.task('browserSync', function() {
 
                     } else if (req.url === '/listp') {
                         var category = values['category'];
-                        console.log(category);
                         db.all("SELECT helps.* FROM  helps  JOIN users ON uid = users.id WHERE category='" + category + "' order by points desc",
                             function(err, rows) {
                                 response['status'] = 'success';
                                 response['projects'] = rows;
-                                console.log(JSON.stringify(response));
                                 res.write(JSON.stringify(response));
                                 res.end();
                             });
                         return null;
                     }
-                     else if (req.url === '/listp') {
-                        var category = values['category'];
-                        console.log(category);
-                        db.all("SELECT helps.* FROM  helps  JOIN users ON uid = users.id WHERE category='" + category + "' order by points desc",
+                     else if (req.url === '/subscribe') {
+                        var id_h = values['help'];
+                        var usr = values['usr'];
+                        db.each("SELECT id from users WHERE users.username ='" + usr + "'",
                             function(err, rows) {
+                                db.run("insert into user_help values('" + rows.id + "','" + id_h + "')");
                                 response['status'] = 'success';
-                                response['projects'] = rows;
                                 console.log(JSON.stringify(response));
                                 res.write(JSON.stringify(response));
                                 res.end();
