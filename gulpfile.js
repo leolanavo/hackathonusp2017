@@ -142,7 +142,7 @@ gulp.task('browserSync', function() {
                         console.log(values);
                         db.all("SELECT * FROM users WHERE username='" + username + "' OR mail='" + email + "'", function(err, rows) {
                             if (rows == undefined || rows.length == 0) {
-                                var result = db.run("insert into users values (NULL, \"" + name + "\", \"" + username + "\", \"" + email + "\", \"" + passhash + "\")");
+                                var result = db.run("insert into users values (NULL, \"" + name + "\", \"" + username + "\", \"" + email + "\", \"" + passhash + "\", \"0\")");
                                 console.log(result);
                                 response['status'] = 'success';
                                 console.log(JSON.stringify(response));
@@ -167,6 +167,7 @@ gulp.task('browserSync', function() {
                                         response['resumo'] = row.resumo;
                                         response['need'] = row.need;
                                         response['p_name'] = row.name;
+                                        response['p_link'] = row.project_link;
                                         res.write(JSON.stringify(response));
                                         res.end();
                                     });
