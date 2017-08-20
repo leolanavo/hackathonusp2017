@@ -156,7 +156,7 @@ gulp.task('browserSync', function() {
                         return null;
                     } else if (req.url === '/info') {
                         console.log(values);
-                        db.each("SELECT * FROM help WHERE id='" + values['proj_id'] + "'",
+                        db.each("SELECT * FROM helps WHERE id='" + values['proj_id'] + "'",
                             function(err, row) {
                                 db.each("SELECT * FROM users WHERE id='" + row.uid + "'",
                                     function(err2, row_user) {
@@ -176,7 +176,7 @@ gulp.task('browserSync', function() {
                         console.log(values);
                         db.each("SELECT * FROM users WHERE username='" + values['user'] + "'",
                             function(err, row) {
-                                db.all("SELECT id,name,need FROM help WHERE uid='" + row.id + "'",
+                                db.all("SELECT id,name,need FROM helps WHERE uid='" + row.id + "'",
                                     function(err2, all_row) {
                                         response['status'] = 'success';
                                         response['errmsg'] = null;
@@ -188,6 +188,24 @@ gulp.task('browserSync', function() {
                                     });
                             });
                         return null;
+                    } else if (req.url === '/addproject') {
+                        var p_name = values['p_name'];
+                        var username = values['username'];
+                        var link = values['webpage'];
+                        var need = values['message'];
+                        var category = values['category'];
+                        var resumo = values['description'];
+                        console.log(values);
+                        db.each("SELECT * FROM users WHERE username='" + username + "'", function(err, row) {
+                            var result = db.run("insert into helps values (NULL, \"" + row.id + "\", \"" + resumo + "\", \"" + need + "\", \"" + category + "\", \"" + link + "\")");
+                            console.log(result);
+                            response['status'] = 'success';
+                            console.log(JSON.stringify(response));
+                            res.write(JSON.stringify(response));
+                            res.end();
+                        });
+                        return null;
+
                     }
                 });
             } else {
