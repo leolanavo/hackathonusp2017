@@ -16,35 +16,48 @@
 
         <script src="https://www.w3schools.com/lib/w3.js"></script>
     </head>
-    <body>
+    <body ng-app="newprojectApp">
         <div w3-include-html="navbar.html"></div>
         <br>
         <br>
         <br>
         <br>
         <br>
-        <div class="container">
+        <div class="container" ng-controller="addprojectCtrl">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
                     <h1> Descreva seu projeto: </a> </h1>
-                <form id="contact-form" method="post" action="contact-2.php" role="form">
-                    <div class="messages"></div>
-                    <div class="controls">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-name">
-                                    <label for="form_name">Researcher Name *:</label>
-                                    <input id="form-name" type="name" name="name"
-                                    class="form-control" placeholder="Please enter your name *"
-                                    required="required" data-error="Valid name is required.">
+                    <form id="contact-form" ng-submit="add_p()">
+                        <div class="messages"></div>
+                        <div class="controls">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-name">
+                                        <label for="form_name">Nome do projeto:</label>
+                                        <input id="form-name"
+                                               type="name"
+                                               name="name"
+                                               class="form-control"
+                                               placeholder="Please enter your project name *"
+                                               required="required"
+                                               data-error="Valid name is required."
+                                               ng-model="p_name">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-name">
-                                    <label for="form_name">Project name *:</label>
-                                    <input id="form-name" type="name" name="name"
-                                    class="form-control" placeholder="Please enter your project name *"
-                                    required="required" data-error="Valid name is required.">
+                            </div><br>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form_page"> Página oficial do projeto: </label>
+                                        <input id="form-site"
+                                               type="site"
+                                               name="site"
+                                               class="form-control"
+                                               placeholder="Please enter official site *"
+                                               required="required"
+                                               data-error="Valid site is required."
+                                               ng-model="page">
+                                    </div>
                                 </div>
                             </div>
                         </div><br>
@@ -69,6 +82,34 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
+<<<<<<< HEAD
+                                    <label for="form_resumo">Descrição*:</label>
+                                    <textarea id="form_resumo"
+                                              name="resumo" 
+                                              class="form-control"
+                                              placeholder="Descrição curta do projeto"
+                                              rows="4"
+                                              required="required"
+                                              data-error="Resume this."
+                                              ng-model="desc"></textarea>
+                                    <div class="help-block with-errors"></div>
+                                    <br>
+                                    <label for="form_message">Pedido*: </label>
+                                    <textarea id="form_message"
+                                              name="form_message"
+                                              class="form-control"
+                                              placeholder="Qual a tarefa a ser feita?"
+                                              rows="4"
+                                              required="required" 
+                                              data-error="Requerimento."
+                                              ng-model="msg"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                                    <button type="submit" class="btn
+                                        btn-success">Criar pedido</button>
+                    </form>
+=======
                                     <label for="form_phone"> Página oficial do projeto: </label>
                                     <input id="form-site" type="site" name="site" class="form-control"
                                     placeholder="Please enter official site *" required="required"
@@ -139,6 +180,7 @@
                     </div>
 
                 </form>
+>>>>>>> 8b4165dd01196e3453a22330bfaf32ec7cb04aec
 
             </div><!-- /.8 -->
 
