@@ -219,7 +219,7 @@ gulp.task('browserSync', function() {
                     } else if (req.url === '/listp') {
                         var category = values['category'];
                         console.log(category);
-                        db.all("SELECT * FROM helps JOIN users ON uid = users.id WHERE category='" + category + "' order by points",
+                        db.all("SELECT * FROM helps JOIN users ON uid = users.id WHERE category='" + category + "' order by points desc",
                             function(err, rows) {
                                 response['status'] = 'success';
                                 response['projects'] = rows;
