@@ -10,7 +10,9 @@ if(!$db)
 
 $name = $_POST["name"];
 $username = $_POST["username"];
+$email = $_POST["email"];
 $password = $_POST["password"];
+$password = $_POST["password_c"];
 $passhash = password_hash($password, PASSWORD_DEFAULT);
 $sql =
     "SELECT id FROM users WHERE passhash='".$passhash."' AND (username='".$username."') OR (mail='".$username."')";
